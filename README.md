@@ -87,14 +87,3 @@ o revisar la URL que muestre la consola.
   "precio": 200000
 }
 ```
-
-## Evidencias para el video
-
-1. Mostrar estructura de carpetas por capas.
-2. Mostrar entidad Producto.
-3. Mostrar DbContext y migración.
-4. Ejecutar `dotnet ef database update`.
-5. Mostrar Swagger.
-6. Probar POST, GET, GET por id, PUT y DELETE.
-7. Mostrar manejo de errores con un id inexistente.
-8. Subir a GitHub y mostrar URL del repositorio.
