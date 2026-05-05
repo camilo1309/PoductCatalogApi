@@ -67,23 +67,3 @@ o revisar la URL que muestre la consola.
 | POST | /api/productos | Crea un producto |
 | PUT | /api/productos/{id} | Actualiza un producto |
 | DELETE | /api/productos/{id} | Elimina un producto |
-
-## JSON para POST
-
-```json
-{
-  "nombre": "Teclado mecánico",
-  "descripcion": "Teclado RGB para programación",
-  "precio": 180000
-}
-```
-
-## JSON para PUT
-
-```json
-{
-  "nombre": "Teclado mecánico actualizado",
-  "descripcion": "Teclado RGB con switches azules",
-  "precio": 200000
-}
-```
