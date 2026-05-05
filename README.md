@@ -67,34 +67,3 @@ o revisar la URL que muestre la consola.
 | POST | /api/productos | Crea un producto |
 | PUT | /api/productos/{id} | Actualiza un producto |
 | DELETE | /api/productos/{id} | Elimina un producto |
-
-## JSON para POST
-
-```json
-{
-  "nombre": "Teclado mecánico",
-  "descripcion": "Teclado RGB para programación",
-  "precio": 180000
-}
-```
-
-## JSON para PUT
-
-```json
-{
-  "nombre": "Teclado mecánico actualizado",
-  "descripcion": "Teclado RGB con switches azules",
-  "precio": 200000
-}
-```
-
-## Evidencias para el video
-
-1. Mostrar estructura de carpetas por capas.
-2. Mostrar entidad Producto.
-3. Mostrar DbContext y migración.
-4. Ejecutar `dotnet ef database update`.
-5. Mostrar Swagger.
-6. Probar POST, GET, GET por id, PUT y DELETE.
-7. Mostrar manejo de errores con un id inexistente.
-8. Subir a GitHub y mostrar URL del repositorio.
