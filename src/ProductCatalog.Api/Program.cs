@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProductCatalog.Api.Middlewares;
 using ProductCatalog.Application.Interfaces;
 using ProductCatalog.Application.Services;
+using ProductCatalog.Application.Services.Impl;
 using ProductCatalog.Infrastructure.Persistence;
 using ProductCatalog.Infrastructure.Repositories;
 

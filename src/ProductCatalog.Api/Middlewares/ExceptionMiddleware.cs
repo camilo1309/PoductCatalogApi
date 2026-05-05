@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
-using ProductCatalog.Application.Services;
+using ProductCatalog.Application.Services.Impl;
 
 namespace ProductCatalog.Api.Middlewares;
 

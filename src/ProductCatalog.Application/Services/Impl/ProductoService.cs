@@ -2,7 +2,7 @@ using ProductCatalog.Application.DTOs;
 using ProductCatalog.Application.Interfaces;
 using ProductCatalog.Domain.Entities;
 
-namespace ProductCatalog.Application.Services;
+namespace ProductCatalog.Application.Services.Impl;
 
 public sealed class ProductoService(IProductoRepository productoRepository) : IProductoService
 {
