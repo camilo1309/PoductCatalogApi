@@ -1,18 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using ProductCatalog.Api.GraphQL.Mutations;
-using ProductCatalog.Api.GraphQL.Queries;
-using ProductCatalog.Api.Middlewares;
 using ProductCatalog.Application.Interfaces;
 using ProductCatalog.Application.Services;
 using ProductCatalog.Application.Services.Impl;
+using ProductCatalog.Grpc.Services;
 using ProductCatalog.Infrastructure.Persistence;
 using ProductCatalog.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddGrpc();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -22,24 +18,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
 builder.Services.AddScoped<IProductoService, ProductoService>();
 
-builder.Services
-    .AddGraphQLServer()
-    .AddQueryType<ProductoQuery>()
-    .AddMutationType<ProductoMutation>();
-
 var app = builder.Build();
 
-app.UseMiddleware<ExceptionMiddleware>();
+app.MapGrpcService<ProductoGrpcService>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-app.UseAuthorization();
-app.MapControllers();
-app.MapGraphQL();
+app.MapGet("/", () => "Servicio gRPC de ProductCatalog activo. Use un cliente gRPC como Postman, Insomnia o grpcurl para probar los métodos CRUD.");
 
 app.Run();

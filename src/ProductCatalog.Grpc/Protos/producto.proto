@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProductCatalog.Grpc";
+
+package producto;
+
+service ProductoGrpc {
+  rpc GetAll (GetAllProductosRequest) returns (ProductoListResponse);
+  rpc GetById (GetProductoByIdRequest) returns (ProductoResponse);
+  rpc Create (CreateProductoGrpcRequest) returns (ProductoResponse);
+  rpc Update (UpdateProductoGrpcRequest) returns (ProductoResponse);
+  rpc Delete (DeleteProductoGrpcRequest) returns (DeleteProductoGrpcResponse);
+}
+
+message GetAllProductosRequest {}
+
+message GetProductoByIdRequest {
+  int32 id = 1;
+}
+
+message CreateProductoGrpcRequest {
+  string nombre = 1;
+  string descripcion = 2;
+  double precio = 3;
+}
+
+message UpdateProductoGrpcRequest {
+  int32 id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+}
+
+message DeleteProductoGrpcRequest {
+  int32 id = 1;
+}
+
+message DeleteProductoGrpcResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ProductoResponse {
+  int32 id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+  string fechaCreacion = 5;
+  string fechaActualizacion = 6;
+}
+
+message ProductoListResponse {
+  repeated ProductoResponse productos = 1;
+}
